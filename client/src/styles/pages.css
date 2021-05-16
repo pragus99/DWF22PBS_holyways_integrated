@@ -1,0 +1,885 @@
+.container-detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 80px 150px;
+}
+
+.detail-content h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.detail p {
+  line-height: 22px;
+  color: #616161;
+  font-size: 16px;
+}
+
+.detail-description {
+  margin-bottom: 50px;
+}
+
+.detail img {
+  width: 87%;
+}
+
+.detai-img {
+  width: 100%;
+}
+
+.detail-content {
+  position: relative;
+  width: 39%;
+}
+
+.detail-progress {
+  width: 95%;
+}
+
+.progress-money {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-money i:first-child {
+  color: #c32424;
+}
+
+.progress-money i:nth-child(2) {
+  color: #616161;
+}
+
+.deadline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-viewdonate {
+  position: absolute;
+  bottom: 0;
+}
+
+.load {
+  background: #e8e8e8;
+  border: 0;
+  color: #616161;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.load:hover {
+  box-shadow: none;
+}
+
+.list-title {
+  font-weight: 700;
+}
+
+.list {
+  padding: 15px 15px 5px 15px;
+  width: 1000px;
+  background: white;
+  margin-bottom: 15px;
+}
+
+.list p {
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.list i {
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.list p:nth-child(3) {
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.list h3 {
+  font-size: 14px;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.wait-approve {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .detail {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .detail img {
+    width: 100%;
+  }
+
+  .detail-content {
+    width: 100%;
+  }
+
+  .list-container {
+    width: 80vw;
+  }
+
+  .list-donation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .list {
+    width: 100%;
+  }
+}
+
+/* profile */
+
+.container-profile {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 80px 100px;
+}
+
+.container-profile h1 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.profile {
+  margin-left: 50px;
+}
+
+.profile-detail {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 180px;
+  height: 200px;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-content {
+  margin-left: 20px;
+}
+
+.profile-content h6 {
+  margin: 0;
+  color: #c32424;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.profile-content p {
+  margin-top: 8px;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  margin-right: 90px;
+}
+
+.list-donation {
+  align-items: flex-start;
+  height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.donation {
+  font-size: 10px;
+  width: 30vw;
+  background: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.donation-body {
+  margin-bottom: 10px;
+}
+
+.donation-body h3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.donation-body p i {
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.donation-body h3,
+.donation-body p {
+  line-height: 20px;
+  margin: 0;
+}
+
+.donation-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.donation-footer p {
+  margin: 0;
+}
+
+.donation-footer p:first-child {
+  font-size: 10px;
+  font-weight: 900;
+  color: #974a4a;
+}
+
+.condition {
+  color: #00ff47;
+  padding: 0 30px;
+  background: rgba(0, 255, 117, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .container-profile {
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .profile {
+    margin: 0;
+  }
+
+  .profile-content {
+    margin-left: 0;
+  }
+
+  .profile-img {
+    margin-right: 10px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .transactions {
+    margin-right: 0;
+    width: 100vw;
+    padding: 0 20px;
+  }
+
+  .donation {
+    width: 100%;
+    align-items: center;
+  }
+
+  .donation h3,
+  .donation p {
+    line-height: 20px;
+    margin: 5px 0;
+    font-size: 12px;
+  }
+
+  .condition {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile-detail {
+    flex-direction: column;
+  }
+}
+
+/* raise fund */
+
+.header-fund {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 80px 165px 0 165px;
+}
+
+.header-fund h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-fund button {
+  margin: 0;
+}
+
+.fund-btn {
+  font-size: 13px;
+}
+
+.card1-fund {
+  margin: 10px;
+}
+
+.funderror {
+  margin-top: 100px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .header-fund {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .header-fund h1,
+  .header-fund button {
+    margin: 10px;
+  }
+}
+
+/* form */
+.raisefund-form {
+  background: none;
+  width: 60vw;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  pointer-events: auto;
+  background-color: unset;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: 0;
+}
+
+.raisefund-title {
+  margin: 50px 0;
+  font-weight: 700;
+}
+
+.raisefund-form {
+  align-items: unset;
+}
+
+.attach-btn {
+  margin-bottom: 20px;
+  font-weight: 500;
+  padding: 5px 20px;
+  font-size: 12px;
+}
+
+.description {
+  height: 25vh;
+  padding-bottom: 150px;
+}
+
+.container-fundbtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.publicfund-btn {
+  font-weight: 500;
+  margin-top: 40px;
+  padding: 5px 90px;
+}
+
+input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  font-size: 17px;
+  color: #b8b8b8;
+}
+
+.img-preview {
+  height: 50%;
+  width: 50%;
+  margin: 10px 10px 12px 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .raisefund-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    padding: 10px;
+  }
+}
+/* Detail */
+
+.wrapper-action {
+  margin-top: 20px;
+}
+
+.wrapper-action label {
+  margin: 20px;
+}
+
+.container-detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 80px 150px;
+  height: 580px;
+}
+
+.detail-content h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.detail p {
+  line-height: 22px;
+  color: #616161;
+  font-size: 16px;
+}
+
+.detail-description {
+  margin-bottom: 50px;
+  word-wrap: break-word;
+}
+
+.detail img {
+  width: 87%;
+  height: 100%;
+}
+
+.detail-img {
+  width: 80%;
+  height: 100%;
+}
+
+.detail-content {
+  position: relative;
+  width: 39%;
+}
+
+.detail-progress {
+  width: 95%;
+}
+
+.progress-money {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-money i:first-child {
+  color: #c32424;
+}
+
+.progress-money i:nth-child(2) {
+  color: #616161;
+}
+
+.deadline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-viewdonate {
+  position: absolute;
+  bottom: 0;
+}
+
+.load {
+  background: #e8e8e8;
+  border: 0;
+  color: #616161;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.load:hover {
+  box-shadow: none;
+}
+
+.list-title {
+  font-weight: 700;
+}
+
+.list {
+  padding: 15px 15px 5px 15px;
+  width: 1000px;
+  background: white;
+  margin-bottom: 15px;
+}
+
+.list p {
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.list i {
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.list p:nth-child(3) {
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.list h3 {
+  font-size: 14px;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.wait-approve {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .detail {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .detail img {
+    width: 100%;
+  }
+
+  .detail-content {
+    width: 100%;
+  }
+
+  .list-container {
+    width: 80vw;
+  }
+
+  .list-donation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .list {
+    width: 100%;
+  }
+}
+
+/* profile */
+
+.container-profile {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 80px 100px;
+}
+
+.container-profile h1 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.profile {
+  margin-left: 50px;
+}
+
+.profile-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-img {
+  width: 180px;
+  height: 200px;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-content {
+  margin-left: 20px;
+}
+
+.profile-content h6 {
+  margin: 0;
+  color: #c32424;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.profile-content p {
+  margin-top: 8px;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  margin-right: 90px;
+}
+
+.list-donation {
+  align-items: flex-start;
+  height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.donation {
+  font-size: 10px;
+  width: 30vw;
+  background: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.donation-body {
+  margin-bottom: 10px;
+}
+
+.donation-body h3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.donation-body p i {
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.donation-body h3,
+.donation-body p {
+  line-height: 20px;
+  margin: 0;
+}
+
+.donation-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.donation-footer p {
+  margin: 0;
+}
+
+.donation-footer p:first-child {
+  font-size: 10px;
+  font-weight: 900;
+  color: #974a4a;
+}
+
+.condition {
+  color: #00ff47;
+  padding: 0 30px;
+  background: rgba(0, 255, 117, 0.1);
+}
+
+.pending {
+  color: rgb(228, 5, 5);
+  padding: 0 30px;
+  background: rgba(150, 24, 24, 0.219);
+}
+
+@media screen and (max-width: 1024px) {
+  .container-profile {
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .profile {
+    margin: 0;
+  }
+
+  .profile-content {
+    margin-left: 0;
+  }
+
+  .profile-img {
+    margin-right: 10px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .transactions {
+    margin-right: 0;
+    width: 100vw;
+    padding: 0 20px;
+  }
+
+  .donation {
+    width: 100%;
+    align-items: center;
+  }
+
+  .donation h3,
+  .donation p {
+    line-height: 20px;
+    margin: 5px 0;
+    font-size: 12px;
+  }
+
+  .condition {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile-detail {
+    flex-direction: column;
+  }
+}
+
+/* raise fund */
+
+.header-fund {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 80px 165px 0 165px;
+}
+
+.header-fund h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-fund button {
+  margin: 0;
+}
+
+.fund-btn {
+  font-size: 13px;
+}
+
+.card1-fund {
+  margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-fund {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .header-fund h1,
+  .header-fund button {
+    margin: 10px;
+  }
+}
+
+/* form */
+.raisefund-form {
+  background: none;
+  width: 60vw;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  pointer-events: auto;
+  background-color: unset;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: 0;
+}
+
+.raisefund-title {
+  margin: 50px 0;
+  font-weight: 700;
+}
+
+.raisefund-form {
+  align-items: unset;
+}
+
+.attach-btn {
+  margin-bottom: 20px;
+  font-weight: 500;
+  padding: 5px 20px;
+  font-size: 12px;
+}
+
+.description {
+  height: 25vh;
+  padding-bottom: 150px;
+}
+
+.container-fundbtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.publicfund-btn {
+  font-weight: 500;
+  margin-top: 40px;
+  padding: 5px 90px;
+}
+
+input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  font-size: 17px;
+  color: #b8b8b8;
+}
+
+.img-preview {
+  height: 50%;
+  width: 50%;
+  margin: 10px 10px 12px 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .raisefund-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    padding: 10px;
+  }
+}

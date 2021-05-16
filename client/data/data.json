@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/tYCsmrp/card1.png",
+      "title": "The Strength of a People. Power of Community",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "goal": 100000000,
+      "deadline": 200,
+      "people": 50,
+      "money": 25000000
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/sKt7wkK/card2.png",
+      "title": "Empowering Communities, Ending Poverty",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "goal": 100000000,
+      "deadline": 200,
+      "people": 87,
+      "money": 50000000
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/Lg9CqMF/card3.png",
+      "title": "Please our brothers in flores",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "goal": 150000000,
+      "deadline": 200,
+      "people": 167,
+      "money": 100000000
+    },
+    {
+      "title": "wwwwewewe",
+      "goal": "213213123",
+      "description": "seersdersersers",
+      "id": 4
+    }
+  ]
+}
