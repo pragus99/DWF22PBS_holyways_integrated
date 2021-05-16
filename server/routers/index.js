@@ -34,7 +34,9 @@ const {
   updateDonate,
   getDonateProfile,
   createDonate,
+  getDonates,
 } = require("../controllers/donateController");
+router.get("/donates", getDonates);
 router.get("/donate", auth, getDonateProfile);
 router.get("/donate/:id/", auth, getDonate);
 router.post("/donate", auth, uploadImg("proofAttachment"), createDonate);

@@ -1,4 +1,5 @@
 const { UsersDonate, Fund, User } = require("../models");
+const { Sequelize } = require("sequelize");
 
 exports.getDonateProfile = async (req, res) => {
   try {
@@ -20,6 +21,49 @@ exports.getDonateProfile = async (req, res) => {
     });
   }
 };
+
+exports.getDonates = async (req, res) => {
+  try {
+    const dataDonate = await UsersDonate.findAll({
+      where: { status: "success" },
+      attributes: [
+        "fundId",
+        [Sequelize.fn("sum", Sequelize.col("donateAmount")), "donateAmount"],
+      ],
+      group: ["fundId"],
+    });
+    res.status(200).send({
+      status: "success",
+      data: dataDonate,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      status: "failed",
+      message: "server error",
+    });
+  }
+};
+
+// exports.getDonates = async (req, res) => {
+//   try {
+//     const dataDonate = await UsersDonate.findAll({
+//       attributes: {
+//         exclude: ["updatedAt"],
+//       },
+//     });
+//     res.status(200).send({
+//       status: "success",
+//       data: dataDonate,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).send({
+//       status: "failed",
+//       message: "server error",
+//     });
+//   }
+// };
 
 exports.getDonate = async (req, res) => {
   const { id } = req.params;

@@ -10,9 +10,7 @@ const Form = () => {
   const [state] = useContext(UserContext);
 
   const [userId] = useState(state?.user?.id);
-  const [money] = useState("");
   const [deadline] = useState(90);
-  const [people] = useState("");
   const [title, setTitle] = useState("");
   const [goal, setGoal] = useState("");
   const [selectPic, setSelectPic] = useState(null);
@@ -33,8 +31,6 @@ const Form = () => {
       const fd = new FormData();
       fd.set("userId", userId);
       fd.set("title", title);
-      fd.set("money", money);
-      fd.set("people", people);
       fd.set("deadline", deadline);
       fd.set("goal", goal);
       fd.set("description", description);
@@ -58,8 +54,6 @@ const Form = () => {
         )}
         <form className="form-modal1 raisefund-form" onSubmit={submitForm}>
           <input type="hidden" name="userId" value={userId} />
-          <input type="hidden" name="money" value={money} />
-          <input type="hidden" name="people" value={people} />
           <input type="hidden" name="deadline" value={deadline} />
           <input
             className="input-modal1"

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
+import { useQuery } from "react-query";
 
+import { API } from "./service/api";
 import convert from "./service/convert";
 import { UserContext } from "./service/userContext";
 import Modal from "./modal/Modal";
@@ -34,6 +36,13 @@ const Card1 = ({ data, button, link }) => {
     setShowRegister(false);
   };
 
+  let { data: donate } = useQuery("donatecard", async () => {
+    const response = await API.get("/donates");
+    return response.data.data;
+  });
+
+  console.log(donate);
+
   return (
     <>
       <Modal show={showLogin} handleClose={handleCloseLogin}>
@@ -58,17 +67,28 @@ const Card1 = ({ data, button, link }) => {
               <p>{content.description}</p>
             </div>
             <div className="card1-wrapperFooter">
-              <progress
-                className="progress"
-                value={content.money}
-                max={content.goal}
-              ></progress>
+              {donate &&
+                donate.map((progress, index) =>
+                  progress.fundId === content.id ? (
+                    <progress
+                      className="progress"
+                      value={progress.donateAmount}
+                      max={content.goal}
+                      key={index}
+                    ></progress>
+                  ) : null
+                )}
+
               <div className="card1-footer">
                 <p>
-                  Rp{" "}
-                  {content.money === undefined ? "0" : convert(content.money)}
+                  Rp {""}
+                  {donate &&
+                    donate.map((money) =>
+                      money.fundId === content.id
+                        ? convert(money.donateAmount)
+                        : null
+                    )}
                 </p>
-
                 {state.login ? (
                   <Link to={`/${link}/${content.id}`}>
                     <button className="card1-btn">{button}</button>

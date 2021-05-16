@@ -14,12 +14,12 @@ const View = () => {
   const { id } = useParams();
   const History = useHistory();
 
-  let { data, isLoading, error, refetch } = useQuery("fundview", async () => {
+  let { data, isLoading, error } = useQuery("fundview", async () => {
     const response = await API.get("/fund/" + id);
     return response.data.data.fund;
   });
 
-  let { data: donate } = useQuery("donateview", async () => {
+  let { data: donate, refetch } = useQuery("donateview", async () => {
     const response = await API.get("/donate/" + id);
     return response.data.data.donate;
   });
@@ -33,6 +33,19 @@ const View = () => {
     History.goBack();
   });
 
+  if (donate) {
+    var donateSuccess = donate.filter((obj) => {
+      return obj.status === "success";
+    });
+
+    var donatePending = donate.filter((obj) => {
+      return obj.status === "pending";
+    });
+
+    var donation = donateSuccess.reduce(function (tot, arr) {
+      return tot + arr.donateAmount;
+    }, 0);
+  }
   return (
     <>
       <div className="notfound">
@@ -62,7 +75,7 @@ const View = () => {
               <div className="detail-progress">
                 <div className="progress-money">
                   <p>
-                    <i>Rp {data.money && convert(data.money)}</i>
+                    <i>Rp {donation && convert(donation)}</i>
                   </p>
                   <p>gathered from</p>
                   <p>
@@ -71,12 +84,12 @@ const View = () => {
                 </div>
                 <progress
                   className="progress"
-                  value={data.money}
+                  value={donation}
                   max={data.goal}
                 ></progress>
                 <div className="deadline">
                   <p>
-                    <i className="number">{donate.length}</i> Donation
+                    <i className="number">{donateSuccess.length}</i> Donation
                   </p>
                   <p>
                     <i className="number">{data.deadline}</i> More Day
@@ -91,8 +104,7 @@ const View = () => {
 
           <div className="list-container">
             <h1 className="list-title">
-              List Donation ({donate.status === "success" ? donate.length : "0"}
-              )
+              List Donation ({donateSuccess.length})
             </h1>
             <div className="list-donation">
               {donate.map((success, index) =>
@@ -111,8 +123,7 @@ const View = () => {
 
           <div className="list-container">
             <h1 className="list-title">
-              Donation has not been approved (
-              {donate.status === "pending" ? donate.length : "0"})
+              Donation has not been approved ({donatePending.length})
             </h1>
             <div className="list-donation">
               {donate.map((pending) =>

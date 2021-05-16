@@ -11,15 +11,27 @@ import ServerError from "../../assets/500 Internal Server Error.gif";
 const Detail = () => {
   const { id } = useParams();
 
-  let { data, isLoading, error, refetch } = useQuery("funddetail", async () => {
+  let { data, isLoading, error } = useQuery("funddetail", async () => {
     const response = await API.get("/fund/" + id);
     return response.data.data.fund;
   });
 
-  let { data: donate } = useQuery("donateview", async () => {
+  let { data: donate, refetch } = useQuery("donateview", async () => {
     const response = await API.get("/donate/" + id);
     return response.data.data.donate;
   });
+
+  if (donate) {
+    var donateSuccess = donate.filter((obj) => {
+      return obj.status === "success";
+    });
+
+    var donation = donateSuccess.reduce(function (tot, arr) {
+      return tot + arr.donateAmount;
+
+      // set initial value as 0 instead 1 [index]
+    }, 0);
+  }
 
   return (
     <>
@@ -31,7 +43,7 @@ const Detail = () => {
           <img src={ServerError} alt="server error. can't fetch data" />
         </>
       )}
-      {data && (
+      {data && donate && (
         <div className="container-detail">
           <div className="detail">
             <div className="detail-img">
@@ -42,7 +54,7 @@ const Detail = () => {
               <div className="detail-progress">
                 <div className="progress-money">
                   <p>
-                    <i>Rp {data.money && convert(data.money)}</i>
+                    <i>Rp {donation && convert(donation)}</i>
                   </p>
                   <p>gathered from</p>
                   <p>
@@ -51,12 +63,12 @@ const Detail = () => {
                 </div>
                 <progress
                   className="progress"
-                  value={data.money}
+                  value={donation}
                   max={data.goal}
                 ></progress>
                 <div className="deadline">
                   <p>
-                    <i className="number">{data.people}</i> Donation
+                    <i className="number">{donateSuccess.length}</i> Donation
                   </p>
                   <p>
                     <i className="number">{data.deadline}</i> More Day

@@ -54,8 +54,8 @@ const Donate = ({ fundid, judul, refresh }) => {
         donateAmount: "",
         selectPic: null,
       });
-      setMessage("");
       refresh();
+      setMessage("");
       handleClose();
     } catch (error) {
       console.log(error);

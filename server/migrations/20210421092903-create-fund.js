@@ -27,12 +27,6 @@ module.exports = {
       goal: {
         type: Sequelize.INTEGER,
       },
-      money: {
-        type: Sequelize.INTEGER,
-      },
-      people: {
-        type: Sequelize.INTEGER,
-      },
       deadline: {
         type: Sequelize.INTEGER,
       },
