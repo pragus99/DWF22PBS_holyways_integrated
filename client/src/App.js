@@ -37,7 +37,7 @@ function App() {
           type: "failed",
         });
       }
-
+      console.log(response);
       let payload = response.data.data.user;
       payload.token = localStorage.token;
 

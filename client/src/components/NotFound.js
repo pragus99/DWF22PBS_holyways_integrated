@@ -12,8 +12,7 @@ const NotFound = () => {
     <div className="notfound">
       <img src={Img} alt="" />
       <p>
-        Go back to <Link to="/"> Home</Link> or{" "}
-        <label onClick={handleBack}>Previous </label> page
+        Go back to <Link to="/"> Home</Link>
       </p>
     </div>
   );

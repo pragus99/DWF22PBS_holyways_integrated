@@ -166,6 +166,14 @@ exports.authUser = async (req, res) => {
       });
     }
 
+    const secretKey = process.env.SECRET_KEY;
+    const token = jwt.sign(
+      {
+        id: dataUser.id,
+      },
+      secretKey
+    );
+
     res.status(200).send({
       status: "Success",
       message: "user valid",
@@ -176,6 +184,7 @@ exports.authUser = async (req, res) => {
           email: dataUser.email,
           avatar: dataUser.avatar,
           phone: dataUser.phone,
+          token,
         },
       },
     });

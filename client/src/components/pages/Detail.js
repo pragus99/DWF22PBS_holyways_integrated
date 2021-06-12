@@ -26,8 +26,8 @@ const Detail = () => {
       return obj.status === "success";
     });
 
-    var donation = donateSuccess.reduce(function (tot, arr) {
-      return tot + arr.donateAmount;
+    var donation = donateSuccess.reduce(function (acc, arr) {
+      return acc + arr.donateAmount;
 
       // set initial value as 0 instead 1 [index]
     }, 0);
@@ -81,7 +81,9 @@ const Detail = () => {
           </div>
 
           <div className="list-container">
-            <h1 className="list-title">List Donation (0)</h1>
+            <h1 className="list-title">
+              List Donation ({donateSuccess.length})
+            </h1>
             <div className="list-donation">
               {donate &&
                 donate.map((success, index) =>
